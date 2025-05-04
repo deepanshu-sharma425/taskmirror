@@ -22,14 +22,14 @@ button {
 
   display: flex;
   justify-content: space-between;
-  align-items: center; /* vertically center content */
-  padding: 0 28px; /* horizontal padding only */
+  align-items: center; 
+  padding: 0 28px;
   transition: all 0.4s ease, color 0.4s ease;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   z-index: 1000;
   height: 70px;
-  background: rgba(255, 255, 255, 0.6); /* or a dark rgba in dark mode */
+  background: rgba(255, 255, 255, 0.6); 
 }
 
 .logo{
@@ -150,8 +150,7 @@ color: inherit;
 
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  
+  gap: 10px; 
 }
 .homes1{
   margin: 0;
