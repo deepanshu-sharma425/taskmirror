@@ -1,6 +1,37 @@
-import React from 'react'
+'use client'
+import React,{useState} from 'react'
+
 
 function Homes() {
+  const[task,settask]=useState([])
+  const[input,setinput]=useState('')
+  const[editindex,seteditindex]=useState(null)
+  const[edittext,setedittext]=useState('')
+
+  function handleinput(e){
+    setinput(e.target.value())
+  }
+  function handletasks(){
+    settask(prev=>[{text:input.trim(),completed:false},...prev])
+  }
+  function deletetask(index){
+    const alltask=[...task]
+    alltask.slice(index,1)
+    settask(alltask)
+  }
+  function editingtext(index){
+    seteditindex(index)
+    setedittext(task[index].text)
+  }
+  function savingedit(index){
+    const alltask=[...task]
+    alltask[index]={...alltask[index],text:edittext}
+  }
+
+
+
+
+
   return (
     <div className="homes" >
       <div className="abouthome">
@@ -26,8 +57,6 @@ function Homes() {
             <p>8 remaining</p>
           </div>
         </div>
-
-        
       </div>
     </div>
   )
