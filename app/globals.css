@@ -542,18 +542,54 @@ gap: 10px;
 
 }
 .progressionbar12{
-  /* width: 600px; */
+  width: 600px;
   height: 10px;
 
   border-radius: 20px;
   background-color: #c3c3c3;
 }
 .progressionbarfill12{
-  /* width: 600px; */
+  width: 600px;
   height: 10px;
   
 }
+.completeddivmain{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 600px;
+  padding: 10px;
+  border-radius: 20px;
+  border: 1px solid #1b2333;
 
+  background:linear-gradient(to right,#172643,#030712)
+}
+.completedtaskname{
+  color: #5b6579;
+  font-size: 17px;
+}
+.timeforcompletdtask{
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+}
+.timeforcompletdtask{
+  color: #5b6579;
+  font-size: 17px;
+}
+.timeforcompletdtask img{
+  width: 30px;
+  height: 30px;
+}
+.progressionbar22{
+  width: 500px;
+  height: 10px;
+  background-color: #3b79b9;
+  border-radius: 20px;
+  transition: all 0.5s linear;
+}
 
 
 

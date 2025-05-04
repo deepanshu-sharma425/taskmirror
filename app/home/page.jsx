@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
 function Taskshow({ name, time, onDelete, onComplete, onEdit }) {
   return (
@@ -7,27 +7,17 @@ function Taskshow({ name, time, onDelete, onComplete, onEdit }) {
       <div className="taskname11">
         <div className="taskname12"><p>{name}</p></div>
         <div className="tasktimeduration">
-          <div className="imageti">
-            <img src="timer.png" alt="" />
-          </div>
-          <div className="timedisplay">
-            <p>{time}min</p>
-          </div>
+          <div className="imageti"><img src="timer.png" alt="" /></div>
+          <div className="timedisplay"><p>{time}min</p></div>
         </div>
         <div className="progressionbar12">
           <div className="progressionbarfill12"></div>
         </div>
       </div>
       <div className="imagesdoneedit">
-        <div onClick={onComplete} className="imgdone">
-          <img src="done.png" alt="" />
-        </div>
-        <div onClick={onEdit} className="imgedit">
-          <img src="edit.png" alt="" />
-        </div>
-        <div onClick={onDelete} className="imgdeleter">
-          <img src="delete.png" alt="" />
-        </div>
+        <div onClick={onComplete} className="imgdone"><img src="done.png" alt="" /></div>
+        <div onClick={onEdit} className="imgedit"><img src="edit.png" alt="" /></div>
+        <div onClick={onDelete} className="imgdeleter"><img src="delete.png" alt="" /></div>
       </div>
     </div>
   )
@@ -40,6 +30,15 @@ function Homes() {
   const [editindex, seteditindex] = useState(null)
   const [edittext, setedittext] = useState('')
 
+  useEffect(() => {
+    const saved = localStorage.getItem('tasks')
+    if (saved) settask(JSON.parse(saved))
+  }, [])
+
+  useEffect(() => {
+    localStorage.setItem('tasks', JSON.stringify(task))
+  }, [task])
+
   function handleinput(e) {
     setinput(e.target.value)
   }
@@ -50,7 +49,10 @@ function Homes() {
 
   function handletasks() {
     if (input.trim() === '' || timeInput.trim() === '') return
-    settask(prev => [{ text: input.trim(), time: timeInput, completed: false }, ...prev])
+    settask(prev => [
+      { id: Date.now(), text: input.trim(), time: timeInput, completed: false },
+      ...prev
+    ])
     setinput('')
     setTimeInput('')
   }
@@ -79,13 +81,13 @@ function Homes() {
   }
 
   function completed(index) {
-    settask(prev => prev.map((t, i) =>
-      i === index ? { ...t, completed: !t.completed } : t
-    ))
+    settask(prev =>
+      prev.map((t, i) => i === index ? { ...t, completed: !t.completed } : t)
+    )
   }
 
-  const activetask = task.filter((e) => !e.completed)
-  const closedtask = task.filter((e) => e.completed)
+  const activetask = task.filter(t => !t.completed)
+  const closedtask = task.filter(t => t.completed)
 
   return (
     <div className="homes">
@@ -93,15 +95,14 @@ function Homes() {
         <h1>Your Tasks</h1>
         <h5>Manage your tasks and track your progress</h5>
       </div>
+
       <div className="progressionbarinfo">
         <div className="progress">
           <div className="pro"><p>Progress</p></div>
           <div className="precentdisplay">
             <img src="percent.png" alt="" />
             <p>
-              {task.length > 0
-                ? `${Math.round((closedtask.length / task.length) * 100)}%`
-                : '0%'}
+              {task.length > 0 ? `${Math.round((closedtask.length / task.length) * 100)}%` : '0%'}
             </p>
           </div>
         </div>
@@ -109,41 +110,26 @@ function Homes() {
           <div
             className="probarfill"
             style={{
-              width: `${task.length > 0
-                ? (closedtask.length / task.length) * 100
-                : 0}%`, backgroundColor: '#52a8ff'
+              width: `${task.length > 0 ? (closedtask.length / task.length) * 100 : 0}%`,
+              backgroundColor: '#52a8ff'
             }}
           ></div>
         </div>
         <div className="displaycompletedtask">
-          <div className="taskdone">
-            <p>{closedtask.length}/{task.length} Tasks Completed</p>
-          </div>
-          <div className="remaining">
-            <p>{activetask.length} remaining</p>
-          </div>
+          <p>{closedtask.length}/{task.length} Tasks Completed</p>
+          <p>{activetask.length} remaining</p>
         </div>
       </div>
 
       <div className="addtasksdiv">
         <div className="addnew"><p>Add New Tasks</p></div>
         <div className="inputtaskbar">
-          <input
-            placeholder='Enter task title'
-            type="text"
-            value={input}
-            onChange={handleinput}
-          />
+          <input placeholder='Enter task title' type="text" value={input} onChange={handleinput} />
         </div>
         <div className="addtimereachtask">
           <div className="timename"><p>Time(minutes)</p></div>
           <div className="inputtimemin">
-            <input
-              type="number"
-              min='0'
-              value={timeInput}
-              onChange={handleTimeInput}
-            />
+            <input type="number" min='0' value={timeInput} onChange={handleTimeInput} />
           </div>
         </div>
         <button onClick={handletasks} className="buttonaddtask">
@@ -157,14 +143,10 @@ function Homes() {
         <div className="displaypendingtask">
           {task.map((t, index) =>
             !t.completed && (
-              <div key={index}>
+              <div key={t.id}>
                 {editindex === index ? (
                   <div className="edit-task">
-                    <input
-                      type="text"
-                      value={edittext}
-                      onChange={handleedit}
-                    />
+                    <input type="text" value={edittext} onChange={handleedit} />
                     <button onClick={() => savingedit(index)}>Save</button>
                   </div>
                 ) : (
