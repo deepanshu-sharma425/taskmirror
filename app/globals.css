@@ -855,7 +855,73 @@ gap: 10px;
   }
   
 }
+@media(max-width:1238px) {
+  .homes1{
+    padding: 70px 0 0 200px;
+  }
+  
+}
+@media (max-width:1093px) {
+  .completeddivmain{
+    width: 500px;
+  }
+  .homes1{
+    padding: 70px 0 0 300px;
+  }
+  .progressionbar22{
+    width: 400px;
+  }
+  
+}
+@media (max-width:900px) {
+  .homes1{
+    padding: 70px 0 0 200px;
+  }
 
+  
+}
+@media (max-width:724px) {
+  .homes1{
+    padding: 70px 0 0 100px;
+  }
+
+  
+}
+@media (max-width:627px) {
+  .homes1{
+    padding: 70px 0 0 100px;
+  }
+  .completeddivmain{
+    width: 300px;
+  }
+
+  .progressionbar22{
+    width: 230px;
+  }
+
+  
+}
+@media (max-width:445px) {
+  .namecomple h1{
+    font-size: 20px;
+  }
+  .homes1{
+    padding: 70px 0 0 100px;
+  }
+  .completeddivmain{
+    width: 260px;
+  }
+
+  .progressionbar22{
+    width: 180px;
+  }
+}
+@media (max-width:402px){
+  .homes1{
+    padding: 70px 0 0 50px;
+  }
+
+}
 
 
 
