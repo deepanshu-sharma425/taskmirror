@@ -111,7 +111,7 @@ function Homes() {
             style={{
               width: `${task.length > 0
                 ? (closedtask.length / task.length) * 100
-                : 0}%`,backgroundColor:task.length > 0?'#52a8ff':'#52a8ff'
+                : 0}%`,backgroundColor:'#52a8ff'
             }}
           ></div>
         </div>
