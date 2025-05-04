@@ -2,6 +2,11 @@ html,body{
   margin: 0;
   padding:0;
   font-family: sans-serif;
+  box-sizing: border-box;
+ 
+}
+input {
+  all: unset;
  
 }
 button {
@@ -127,8 +132,9 @@ color: inherit;
   margin-top: 30px;
   padding-left: 350px;
   padding-top: 70px;
+ padding-bottom: 280px;
   background: linear-gradient(to right,#0c1526,#020611);
-  height: 100vh;
+  
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -391,5 +397,115 @@ color: inherit;
   width: 30px;
   height: 30px;
 }
+.addtasksdiv{
+  background: linear-gradient(to right,#192a46,#0d1729);
+  border: 1px solid #2f3d55;
+  border-radius: 20px;
+  padding: 20px;
+  display: flex;
+  width: 800px;
+  flex-direction: column;
+gap: 10px;
+
+}
+.addnew{
+  font-size: 20px;
+  color: #e1e7ef;
+}
+.inputtaskbar input{
+  background-color: #091121;
+  width: 710px;
+  height: 25px;
+  padding:10px 20px;
+  border-radius: 20px;
+  color: #7f8da3;
+  border: 1px solid #2f3d55;
+
+  
+}
+.addtimereachtask{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+}
+.inputtimemin input{
+  background-color: #091121;
+  width: 80px;
+  height: 25px;
+  padding:10px 20px;
+  border-radius: 20px;
+  color: #7f8da3;
+  border: 1px solid #2f3d55;
+
+}
+.timename{
+  font-size: 17px;
+  color: #e1e7ef;
+}
+.buttonaddtask{
+  display: flex;
+  background-color: #60a5ff;
+  width: 710px;
+  height: 25px;
+  padding: 5px 20px;
+  gap: 10px;
+  font-size: 20px;
+  justify-content: center;
+  border-radius: 20px;
+}
+.pendingtask{
+  font-size: 20px;
+  color: #e1e7ef;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.taskdisplayname1{
+  display: flex;
+  background: linear-gradient(to right,#192844,#030712);
+  border: 1px solid #2f3d55;
+  border-radius: 20px;
+  padding: 20px;
+  justify-content: space-between;
+  align-items: center;
+  width: 800px;
+}
+.imagesdoneedit{
+  display: flex;
+  gap: 10px;
+}
+.imagesdoneedit img{
+  width: 30px;
+  height: 30px;
+}
+.tasktimeduration{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.tasktimeduration img{
+  width: 30px;
+  height: 30px;
+}
+.taskname11{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.taskname12{
+  color: #e1e7ef;
+  font-size: 19px;
+}
+.timedisplay{
+  font-size: 15px;
+  color: #7f8da3;
+}
+.displaypendingtask{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
 
 
