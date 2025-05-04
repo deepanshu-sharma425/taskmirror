@@ -1,6 +1,49 @@
-import React from 'react'
+'use client'
+import React,{useState,useEffect} from 'react'
 
 function Timer() {
+  const[minute,setminute]=useState('')
+  const[second,setsecond]=useState(0)
+  const[running,setrunning]=useState(false)
+  function handleinput(e){
+    setminute(e.target.value)
+  }
+  useEffect(()=>{
+    let interval;
+    if(second>0 && running){
+      interval=setInterval(() => {
+        setsecond(prev=>prev-1)
+        
+      }, 1000);
+    }
+    return()=>clearInterval(interval)
+  },[second,running])
+  function starttimer(){
+    const min=parseInt(minute,10)||0
+    if(min<0){
+      alert('Enter time greater than 0 Minute')
+      return
+    }
+    setrunning(true)
+    setsecond(min*60)
+
+  }
+  function handlereset(){
+    setrunning(false)
+    setminute('')
+    setsecond(0)
+  }
+  const format=(sec)=>{
+    if(sec<0){
+      return '00:00'
+    }
+    const min=Math.floor(sec/60)
+    const seco=sec%60
+    return `${String(min).padStart(2,'0')}:${String(seco).padStart(2,'0')}`
+  }
+
+
+
   return (
     <div className='homes1'>
       <div className="abouttimer">
