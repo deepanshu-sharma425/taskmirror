@@ -129,6 +129,9 @@ color: inherit;
   padding-top: 70px;
   background: linear-gradient(to right,#0c1526,#020611);
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 
 }
 .abouthome{
@@ -342,6 +345,51 @@ color: inherit;
 .progressionbar{
   height: 30px;
   width: 400px;
-  border: 1px solid #242f3f;
+
+  background-color: #060e1b;
   border-radius: 20px;
 }
+.progressionbarinfo{
+  border: 1px solid #212937;
+  background: linear-gradient(to right,#0f1d31,#090f1e);
+  border-radius: 20px;
+  width: 800px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.progress{
+  display: flex;
+  justify-content: space-between;
+}
+.pro{
+  color: #e1e7ef;
+  font-size: 20px;
+  font-weight: 300;
+}
+.precentdisplay{
+  color: rgb(87, 168, 255);
+  font-size: 20px;
+  font-weight: 300;
+}
+
+
+.displaycompletedtask{
+  display: flex;
+  justify-content: space-between;
+  color: #7f8da3;
+  font-size: 15px;
+}
+.precentdisplay{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.precentdisplay img{
+  width: 30px;
+  height: 30px;
+}
+
+
