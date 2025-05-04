@@ -17,7 +17,7 @@ function Timer() {
         setsecond(prev => prev - 1);
       }, 1000);
     } else if (second === 0) {
-      setrunning(false); 
+      setrunning(false);
     }
     return () => clearInterval(interval);
   }, [running, second]);
@@ -33,7 +33,7 @@ function Timer() {
       setsecond(min * 60);
       setrunning(true);
     } else {
-      setrunning(prev => !prev); 
+      setrunning(prev => !prev);
     }
   }
 
@@ -83,25 +83,30 @@ function Timer() {
         <div className="buttons">
           <div className="start">
             <button onClick={starttimer}>
-              <img src="" alt="start stop" />
-              <p>{running ? 'Stop' : second > 0 ? 'Resume' : 'Start'}</p>
+              <div className="b"> <img src={running ? 'timerpause.png' :  'timerstart.png'} alt="start stop" />
+                <p>{running ? 'Stop' : second > 0 ? 'Start' : 'Start'}</p></div>
+
             </button>
           </div>
           <div className="reset">
             <button onClick={handlereset}>
-              <img src="" alt="reset" />
-              <p>Reset</p>
+              <div className="a"><img src="timerreset.png" alt="reset" />
+                <p>Reset</p></div>
+
             </button>
           </div>
         </div>
         <div className="minurtesbutton">
-          <button onClick={min15}>15</button>
-          <button onClick={min30}>30</button>
-          <button onClick={min45}>45</button>
+          <div className="newnew"><button onClick={min15}>15</button></div>
+          <div className="newnew"><button onClick={min30}>30</button></div>
+          <div className="newnew"><button onClick={min45}>45</button></div>
+          
+          
+    
         </div>
         <div className="inputtimer">
           <div className="mininp">
-            <input type="number" min='0' value={minute} onChange={handleinput} />
+            <input type="number" min='0' value={minute} onChange={handleinput} placeholder='Enter Pomodoro Length'/>
           </div>
           <button onClick={() => {
             const min = parseInt(minute, 10) || 0;

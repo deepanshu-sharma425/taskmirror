@@ -4,6 +4,10 @@ html,body{
   font-family: sans-serif;
  
 }
+button {
+  all: unset;
+  cursor: pointer;
+}
 *{
   box-sizing: border-box;
   margin: 0;
@@ -151,6 +155,9 @@ color: inherit;
 }
 .homes1{
   margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
   margin-top: 30px;
   padding-left: 500px;
   padding-top: 70px;
@@ -206,4 +213,130 @@ color: inherit;
   font-weight: 200;
   font-size: 16px;
   color:#7f8da3
+}
+.displaytimeleft h1{
+  color: rgb(97, 165, 255);
+  font-size: 50px;
+}
+.pomodoro{
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 10px 20px;
+ 
+  background:linear-gradient(to right,#0e1b31,#090f1e);
+  border: 1px solid #242f3f;
+  border-radius: 20px;
+  width: 520px;
+  align-items: center;
+  justify-content: center;
+}
+.buttons{
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+.start{
+  display: flex;
+  align-items: center;
+}
+.b{
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  height: 40px;
+  width: 100px;
+  padding: 10px 20px;
+  border-radius: 20px;
+  
+  
+}
+.a{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 115px;
+  padding: 20px;
+  height: 40px;
+  background-color: #090f1d;
+ 
+  border-radius: 20px;
+  border: 1px solid #393f49;
+
+}
+.a img{
+  height: 25px;
+  width: 25px;
+}
+.b img{
+  height: 30px;
+  width: 30px;
+}
+.start{
+  width: 70px;
+ 
+}
+.start button{
+  width: 150px;
+ border-radius: 20px;
+ padding-right: 20px;
+  background-color: #5fa6ff
+
+}
+
+.a p{
+  color: #e1e7ef;
+}
+.minurtesbutton{
+  display: flex;
+  gap: 40px;
+  
+}
+.newnew{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: rgb(247, 250, 252);
+  background: linear-gradient(to right,#0b1121,#18253f);
+  border-radius: 15px;
+  height: 40px;
+  padding-left: 40px;
+  width: 130px;
+  border: 0.2px solid #242e3f;
+
+}
+.newnew button{
+  width: 60px;
+  height: 30px;
+
+  
+}
+.mininp{
+  height: 40px;
+}
+.mininp input{
+  width: 380px;
+  font-size: 20px;
+  height: 40px;
+  background-color: #08101e;
+  border: 1px solid #383f49;
+  border-radius: 20px;
+  text-align: center;
+  padding:0 20px;
+  color: #e1e7ef;
+ 
+}
+.inputtimer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+.inputtimer button{
+  padding-left:20px ;
+  height: 40px;
+  width: 50px;
+  background-color: #61a5ff;
+  border-radius: 10px;
 }
