@@ -340,3 +340,9 @@ color: inherit;
   background-color: #61a5ff;
   border-radius: 10px;
 }
+.progressionbar{
+  height: 30px;
+  width: 400px;
+  border: 1px solid #242f3f;
+  border-radius: 20px;
+}

@@ -5,6 +5,7 @@ function Timer() {
   const [minute, setminute] = useState('');
   const [second, setsecond] = useState(0);
   const [running, setrunning] = useState(false);
+  const [initialsecond, setInitialsecond] = useState(0);
 
   function handleinput(e) {
     setminute(e.target.value);
@@ -30,7 +31,9 @@ function Timer() {
         alert('Enter time greater than 0 minute');
         return;
       }
-      setsecond(min * 60);
+      const totalSeconds = min * 60;
+      setsecond(totalSeconds);
+      setInitialsecond(totalSeconds);
       setrunning(true);
     } else {
       setrunning(prev => !prev);
@@ -41,6 +44,7 @@ function Timer() {
     setrunning(false);
     setminute('');
     setsecond(0);
+    setInitialsecond(0); 
   }
 
   const format = (sec) => {
@@ -50,22 +54,30 @@ function Timer() {
   };
 
   function min15() {
+    const seconds = 15 * 60;
     setminute(15);
-    setsecond(15 * 60);
+    setsecond(seconds);
+    setInitialsecond(seconds); 
     setrunning(false);
   }
 
   function min30() {
+    const seconds = 30 * 60;
     setminute(30);
-    setsecond(30 * 60);
+    setsecond(seconds);
+    setInitialsecond(seconds); 
     setrunning(false);
   }
 
   function min45() {
+    const seconds = 45 * 60;
     setminute(45);
-    setsecond(45 * 60);
+    setsecond(seconds);
+    setInitialsecond(seconds); 
     setrunning(false);
   }
+
+  let progress = initialsecond > 0 ? ((initialsecond - second) / initialsecond) * 100 : 0;
 
   return (
     <div className='homes1'>
@@ -78,21 +90,32 @@ function Timer() {
           <h1>{format(second)}</h1>
         </div>
         <div className="progressionbar">
-          <div className="progresionbarfill"></div>
+          <div
+            className="progresionbarfill"
+            style={{
+              width: `${progress}%`,
+              height: '30px',
+              borderRadius:'20px',
+              backgroundColor: '#63a4ff',
+              transition: 'width 1s linear'
+            }}
+          ></div>
         </div>
         <div className="buttons">
           <div className="start">
             <button onClick={starttimer}>
-              <div className="b"> <img src={running ? 'timerpause.png' :  'timerstart.png'} alt="start stop" />
-                <p>{running ? 'Stop' : second > 0 ? 'Start' : 'Start'}</p></div>
-
+              <div className="b">
+                <img src={running ? 'timerpause.png' : 'timerstart.png'} alt="start stop" />
+                <p>{running ? 'Stop' : second > 0 ? 'Start' : 'Start'}</p>
+              </div>
             </button>
           </div>
           <div className="reset">
             <button onClick={handlereset}>
-              <div className="a"><img src="timerreset.png" alt="reset" />
-                <p>Reset</p></div>
-
+              <div className="a">
+                <img src="timerreset.png" alt="reset" />
+                <p>Reset</p>
+              </div>
             </button>
           </div>
         </div>
@@ -100,17 +123,16 @@ function Timer() {
           <div className="newnew"><button onClick={min15}>15</button></div>
           <div className="newnew"><button onClick={min30}>30</button></div>
           <div className="newnew"><button onClick={min45}>45</button></div>
-          
-          
-    
         </div>
         <div className="inputtimer">
           <div className="mininp">
-            <input type="number" min='0' value={minute} onChange={handleinput} placeholder='Enter Pomodoro Length'/>
+            <input type="number" min='0' value={minute} onChange={handleinput} placeholder='Enter Pomodoro Length' />
           </div>
           <button onClick={() => {
             const min = parseInt(minute, 10) || 0;
-            setsecond(min * 60);
+            const total = min * 60;
+            setsecond(total);
+            setInitialsecond(total); 
             setrunning(false);
           }}>Set</button>
         </div>
