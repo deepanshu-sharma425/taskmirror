@@ -1,20 +1,32 @@
 'use client'
 import React, { useState, useEffect } from 'react'
 
-function Taskshow({ name, time, onDelete, onComplete, onEdit }) {
+function Taskshow({ name, time, remainingTime, started, onDelete, onComplete, onEdit, onStart }) {
+  const mins = Math.floor(remainingTime / 60)
+  const secs = remainingTime % 60
+
   return (
     <div className='taskdisplayname1'>
+      <div className="play">
+      <button onClick={onStart} disabled={started}><img src="playtimer1.png" alt="logo" /></button>
+      </div>
       <div className="taskname11">
         <div className="taskname12"><p>{name}</p></div>
         <div className="tasktimeduration">
           <div className="imageti"><img src="timer.png" alt="" /></div>
-          <div className="timedisplay"><p>{time}min</p></div>
+          <div className="timedisplay"><p>{mins}m {secs}s</p></div>
         </div>
         <div className="progressionbar12">
-          <div className="progressionbarfill12"></div>
+          <div
+            className="progressionbarfill12"
+            style={{
+              width: `${100 - (remainingTime / (time * 60)) * 100}%`
+            }}
+          ></div>
         </div>
       </div>
       <div className="imagesdoneedit">
+    
         <div onClick={onComplete} className="imgdone"><img src="done.png" alt="" /></div>
         <div onClick={onEdit} className="imgedit"><img src="edit.png" alt="" /></div>
         <div onClick={onDelete} className="imgdeleter"><img src="delete.png" alt="" /></div>
@@ -39,6 +51,20 @@ function Homes() {
     localStorage.setItem('tasks', JSON.stringify(task))
   }, [task])
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      settask(prev =>
+        prev.map(t =>
+          t.started && t.remainingTime > 0
+            ? { ...t, remainingTime: t.remainingTime - 1 }
+            : t
+        )
+      )
+    }, 1000)
+
+    return () => clearInterval(interval)
+  }, [])
+
   function handleinput(e) {
     setinput(e.target.value)
   }
@@ -49,8 +75,16 @@ function Homes() {
 
   function handletasks() {
     if (input.trim() === '' || timeInput.trim() === '') return
+    const mins = parseInt(timeInput)
     settask(prev => [
-      { id: Date.now(), text: input.trim(), time: timeInput, completed: false },
+      {
+        id: Date.now(),
+        text: input.trim(),
+        time: mins,
+        remainingTime: mins * 60,
+        completed: false,
+        started: false
+      },
       ...prev
     ])
     setinput('')
@@ -83,6 +117,14 @@ function Homes() {
   function completed(index) {
     settask(prev =>
       prev.map((t, i) => i === index ? { ...t, completed: !t.completed } : t)
+    )
+  }
+
+  function startTask(index) {
+    settask(prev =>
+      prev.map((t, i) =>
+        i === index ? { ...t, started: true } : t
+      )
     )
   }
 
@@ -153,9 +195,12 @@ function Homes() {
                   <Taskshow
                     name={t.text}
                     time={t.time}
+                    remainingTime={t.remainingTime}
+                    started={t.started}
                     onDelete={() => deletetask(index)}
                     onComplete={() => completed(index)}
                     onEdit={() => editingtext(index)}
+                    onStart={() => startTask(index)}
                   />
                 )}
               </div>
