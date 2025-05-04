@@ -190,7 +190,7 @@ color: inherit;
   display: flex;
   flex-direction: column;
   gap: 20px;
-  width: 520px;
+  width: 490px;
   box-sizing: border-box;
   background: linear-gradient(to right,#030712,#090f1e);
 }
@@ -227,7 +227,7 @@ color: inherit;
   background:linear-gradient(to right,#0e1b31,#090f1e);
   border: 1px solid #242f3f;
   border-radius: 20px;
-  width: 520px;
+  width: 490px;
   align-items: center;
   justify-content: center;
 }
