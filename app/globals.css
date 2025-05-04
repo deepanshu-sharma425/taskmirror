@@ -546,11 +546,14 @@ gap: 10px;
   height: 10px;
 
   border-radius: 20px;
-  background-color: #c3c3c3;
+  background-color: #0b162b;
 }
 .progressionbarfill12{
   width: 600px;
   height: 10px;
+  background-color: #61a5ff;
+  transition: all 1s linear;
+  border-radius: 20px;
   
 }
 .completeddivmain{
@@ -597,7 +600,261 @@ gap: 10px;
   height: 50px;
 
 }
+@media(max-width:1227px){
+  .progressionbarinfo{
+    width: 600px;
+  }
+  .probar{
+    width: 500px;
+  }
+  .probarfill{
+    width: 500px;
 
+  }
+  .addtasksdiv{
+    width: 600px;
+
+  }
+  .inputtaskbar input{
+    width: 500px;
+  }
+  .buttonaddtask{
+    width: 500px;
+  }
+  .taskdisplayname1{
+    width: 600px;
+  }
+  .progressionbar12{
+    width: 320px;
+  }
+  .progressionbar22{
+    width: 320px;
+
+  }
+
+}
+@media(max-width:968px){
+  .homes{
+    padding: 70px 0 280px 200px;
+  }
+}
+@media(max-width:829px){
+  .homes{
+    padding: 70px 0 280px 100px;
+  }
+}
+@media(max-width:750px){
+  .logo{
+    font-size: 15px;
+  }
+  .functionname{
+    font-size: 9px;
+  }
+  .functionname img{
+    width: 20px;
+    height: 20px;
+  }
+  .login{
+    font-size: 12px;
+
+  }
+  .login img{
+    width: 20px;
+    height: 20px;
+  }
+}
+@media(max-width:712px){
+  .homes{
+    padding:50px 0 200px 50px;
+  }
+}
+@media(max-width:685px){
+  .logo h2{
+    font-size:15px ;
+  }
+  .functionname a{
+    font-size: 15px;
+  }
+  .functionname img{
+    width: 15px;
+    height: 15px;
+  }
+  
+  .login img{
+    width: 15px;
+    height: 15px;
+  }
+}
+@media(max-width:669px){
+  .homes{
+    padding:50px 0 200px 10px;
+  }
+}
+@media(max-width:626px){
+  .homes{
+    padding:50px 0 200px 70px;
+  }
+  .progressionbarinfo{
+    width: 400px;
+  }
+  .probar{
+    width: 300px;
+  }
+  .probarfill{
+    width: 300px;
+
+  }
+  .addtasksdiv{
+    width: 400px;
+
+  }
+  .inputtaskbar input{
+    width: 300px;
+  }
+  .buttonaddtask{
+    width: 300px;
+  }
+  .addtaskpname{
+    font-size: 15px;
+  }
+  .mgadd{
+    font-size: 15px;
+  }
+  .taskdisplayname1{
+    width: 400px;
+  }
+  .progressionbar12{
+    width: 150px;
+  }
+  .progressionbar22{
+    width: 150px;
+
+  }
+  .imgdone img{
+    width: 20px;
+    height: 20px;
+
+  }
+  .imgedit img{
+    width: 20px;
+    height: 20px;
+  }
+  .imgdeleter img{
+    width: 20px;
+    height: 20px;
+  }
+
+}
+@media(max-width:574px){
+  .functions{
+    gap: 0px;
+  }
+  .functionname{
+    padding: 5px;
+  }
+}
+@media(max-width:496px){
+  .navbar{
+    padding: 0 10px;
+  }
+
+}
+@media(max-width:481px){
+  .abouthome h1{
+    font-size: 20px;
+  }
+  .homes{
+    padding:50px 0 280px 20px;
+  }
+
+
+
+}
+@media(max-width:473px){
+  .functionname img{
+    display: none;
+
+  }
+}
+@media(max-width:426px){
+  .progressionbarinfo{
+    width: 300px;
+  }
+  .homes{
+    padding:50px 0 280px 70px;
+  }
+  .probar{
+    width: 200px;
+  }
+  .probarfill{
+    width: 200px;
+
+  }
+  .addtasksdiv{
+    width: 300px;
+
+  }
+  .inputtaskbar input{
+    width: 200px;
+    height: 20px;
+  }
+  .buttonaddtask{
+    width: 200px;
+  }
+  .addtaskpname{
+    font-size: 15px;
+  }
+  .mgadd{
+    font-size: 15px;
+  }
+  .timename p{
+    font-size: 15px;
+  }
+  .inputtimemin input{
+    height: 20px;
+  }
+  .taskdisplayname1{
+    width: 300px;
+  }
+  .progressionbar12{
+    width: 150px;
+  }
+  .progressionbar22{
+    width: 150px;
+
+  }
+  .imgdone img{
+    width: 20px;
+    height: 20px;
+
+  }
+  .imgedit img{
+    width: 20px;
+    height: 20px;
+  }
+  .imgdeleter img{
+    width: 20px;
+    height: 20px;
+  }
+  .taskdisplayname1 img{
+    width: 25px;
+    height: 25px;
+
+  }
+  .taskname12 p{
+    font-size: 14px;
+  }
+
+}
+@media (max-width:389px) {
+  .left{
+    gap: 5px;
+  }
+  .homes{
+    padding:50px 0 280px 30px;
+  }
+  
+}
 
 
 
