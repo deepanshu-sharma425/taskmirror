@@ -111,7 +111,7 @@ function Homes() {
             style={{
               width: `${task.length > 0
                 ? (closedtask.length / task.length) * 100
-                : 0}%`,backgroundColor:'#52a8ff'
+                : 0}%`, backgroundColor: '#52a8ff'
             }}
           ></div>
         </div>
@@ -155,16 +155,30 @@ function Homes() {
       <div className="pendingtask">
         <div className='pendingtask'><p>Pending Tasks</p></div>
         <div className="displaypendingtask">
-          {activetask.map((e, index) => (
-            <Taskshow
-              key={index}
-              name={editindex === index ? edittext : e.text}
-              time={e.time}
-              onDelete={() => deletetask(index)}
-              onComplete={() => completed(index)}
-              onEdit={() => editingtext(index)}
-            />
-          ))}
+          {task.map((t, index) =>
+            !t.completed && (
+              <div key={index}>
+                {editindex === index ? (
+                  <div className="edit-task">
+                    <input
+                      type="text"
+                      value={edittext}
+                      onChange={handleedit}
+                    />
+                    <button onClick={() => savingedit(index)}>Save</button>
+                  </div>
+                ) : (
+                  <Taskshow
+                    name={t.text}
+                    time={t.time}
+                    onDelete={() => deletetask(index)}
+                    onComplete={() => completed(index)}
+                    onEdit={() => editingtext(index)}
+                  />
+                )}
+              </div>
+            )
+          )}
         </div>
       </div>
     </div>
