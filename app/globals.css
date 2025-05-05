@@ -196,7 +196,7 @@ color: inherit;
   border-radius: 20px;
   padding: 40px;
   display: flex;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   flex-direction: column;
   gap: 20px;
   width: 490px;
@@ -952,28 +952,28 @@ gap: 10px;
 }
 @media(max-width:467px){
   .pomodoro{
-    width: 300px;
+    width: 260px;
   }
   .progressionbar{
-    width: 180px;
+    width: 140px;
   }
   .progressionbarfill{
-    width: 180px;
+    width: 140px;
 
   }
   .mininp input{
-    width: 140px;
+    width: 110px;
     font-size: 13px;
   }
   .newnew{
-    width: 40px;
+    width: 35px;
   }
   .aboutpomodoro{
-    width: 300px;
+    width: 260px;
   }
   .inputtimer button{
     font-size: 13px;
-    width: 35px;
+    width: 32px;
 
   }
 
