@@ -32,7 +32,7 @@ function Completed() {
   }, [])
 
   return (
-    <div className="homes1">
+    <div className="homes2">
       <div className="namecomple">
         <h1>Completed Tasks</h1>
         <h5>You've completed {completedTasks.length} task{completedTasks.length !== 1 && 's'}.</h5>

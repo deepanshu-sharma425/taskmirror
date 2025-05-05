@@ -181,7 +181,7 @@ color: inherit;
   flex-direction: column;
   gap: 30px;
   margin-top: 30px;
-  height: max-content;
+  /* height: max-content; */
   padding-bottom: 800px;
 
 
@@ -654,6 +654,7 @@ gap: 10px;
 
 }
 @media(max-width:968px){
+  
   .homes{
     padding: 70px 0 280px 200px;
   }
@@ -877,16 +878,27 @@ gap: 10px;
 }
 @media(max-width:1238px) {
   .homes1{
-    padding: 70px 0 900px 200px;
+    padding: 70px 0 0 200px;
   }
+  .homes2{
+    padding: 70px 0 800px 200px;
+    height: 100%;
+
+  }
+  .completeddivmain{
+    width: 500px;
   
+}
+.progressionbar22{
+  width: 400px;
+}
 }
 @media (max-width:1093px) {
   .completeddivmain{
     width: 500px;
   }
   .homes1{
-    padding: 70px 0 900px 300px;
+    padding: 70px 0 0 300px;
   }
   .progressionbar22{
     width: 400px;
@@ -895,21 +907,29 @@ gap: 10px;
 }
 @media (max-width:900px) {
   .homes1{
-    padding: 70px 0 900px 200px;
+    padding: 70px 0 0px 200px;
   }
+  
 
   
 }
 @media (max-width:724px) {
   .homes1{
-    padding: 70px 0 900px 100px;
+    padding: 70px 0 0px 100px;
+  }
+  .homes2{
+    padding:70px 0 900px 100px; ;
   }
 
   
 }
 @media (max-width:627px) {
   .homes1{
+    padding: 70px 0 0px 100px;
+  }
+  .homes2{
     padding: 70px 0 900px 100px;
+
   }
   .completeddivmain{
     width: 300px;
@@ -925,8 +945,11 @@ gap: 10px;
   .namecomple h1{
     font-size: 20px;
   }
+  .homes2{
+    padding:70px 0 900px 100px;
+  }
   .homes1{
-    padding: 70px 0 900px 100px;
+    padding: 70px 0 0px 100px;
   }
   .completeddivmain{
     width: 260px;
@@ -938,7 +961,7 @@ gap: 10px;
 }
 @media (max-width:402px){
   .homes1{
-    padding: 70px 0 900 50px;
+    padding: 70px 0  50px;
   }
 
 }
