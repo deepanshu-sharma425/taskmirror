@@ -38,11 +38,11 @@ const Navbar = () => {
                 </div>
                 <div className="left">
                     <div onClick={handledark} className="darkmode">
-                        <img src={dark?'dark.png':'light.png'}alt="darkmode" />
+                        {/* <img src={dark?'dark.png':'light.png'}alt="darkmode" /> */}
                     </div>
                     <div className="login">
-                        <img src="login.png" alt="login" />
-                        <h3>Login</h3>
+                        {/* <img src="login.png" alt="login" /> */}
+                        {/* <h3>Login</h3> */}
                     </div>
                 </div>
             </div>
