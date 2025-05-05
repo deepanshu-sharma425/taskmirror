@@ -166,8 +166,24 @@ color: inherit;
   display: flex;
   flex-direction: column;
   gap: 30px;
-  height: 100vh;
   margin-top: 30px;
+  height: max-content;
+
+  padding-left: 500px;
+  padding-top: 70px;
+  background: linear-gradient(to right,#0c1526,#020611);
+  
+}
+.homes2{
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-top: 30px;
+  height: max-content;
+  padding-bottom: 800px;
+
+
   padding-left: 500px;
   padding-top: 70px;
   background: linear-gradient(to right,#0c1526,#020611);
