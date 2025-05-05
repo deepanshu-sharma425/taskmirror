@@ -989,7 +989,7 @@ gap: 10px;
 }
 @media(max-width:530px){
   .homes1{
-    padding: 70px 0 900px 50px; ;
+    padding: 70px 0 0px 50px; ;
   }
 }
 @media(max-width:467px){
