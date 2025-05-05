@@ -169,6 +169,7 @@ color: inherit;
   margin-top: 30px;
   height: max-content;
   padding-bottom: 800px;
+  height: 95vh;
 
   padding-left: 500px;
   padding-top: 70px;
@@ -881,7 +882,7 @@ gap: 10px;
     padding: 70px 0 0 200px;
   }
   .homes2{
-    padding: 70px 0 800px 200px;
+    padding: 70px 0 1100px 200px;
     height: 100%;
 
   }
@@ -918,7 +919,7 @@ gap: 10px;
     padding: 70px 0 0px 100px;
   }
   .homes2{
-    padding:70px 0 900px 100px; ;
+    padding:70px 0 1100px 100px; ;
   }
 
   
@@ -928,7 +929,7 @@ gap: 10px;
     padding: 70px 0 0px 100px;
   }
   .homes2{
-    padding: 70px 0 900px 100px;
+    padding: 70px 0 1100px 100px;
 
   }
   .completeddivmain{
@@ -946,7 +947,7 @@ gap: 10px;
     font-size: 20px;
   }
   .homes2{
-    padding:70px 0 900px 100px;
+    padding:70px 0 1100px 100px;
   }
   .homes1{
     padding: 70px 0 0px 100px;
@@ -994,7 +995,7 @@ gap: 10px;
 }
 @media(max-width:467px){
   .homes2{
-    padding: 70px 0 900px 60px; ; ;
+    padding: 70px 0 1100px 60px; ; ;
   }
   .pomodoro{
     width: 260px;
