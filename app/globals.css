@@ -134,6 +134,7 @@ color: inherit;
   padding-top: 70px;
  padding-bottom: 280px;
   background: linear-gradient(to right,#0c1526,#020611);
+  height: 95vh;
   
   display: flex;
   flex-direction: column;
@@ -487,7 +488,7 @@ gap: 10px;
   border: 1px solid #2f3d55;
   border-radius: 20px;
   padding: 20px;
-  height: 95vh;
+
   justify-content: space-between;
   align-items: center;
   width: 800px;gap: 3px;
