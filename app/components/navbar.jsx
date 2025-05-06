@@ -20,7 +20,7 @@ const Navbar = () => {
         <div>
             <div style={style} className="navbar">
                 <div className="logo">
-                    <h2>TaskMirror</h2>
+                    <Link href='/home'>TaskMirror</Link>
                 </div>
                 <div className="functions">
                     <div className="functionname">

@@ -1026,7 +1026,12 @@ gap: 10px;
   }
 
 }
+.logo a{
+  text-decoration: none;
+  color: #53a9ff;
+  font-size: 25px;
 
+}
 
 
 
